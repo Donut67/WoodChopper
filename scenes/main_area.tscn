@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b46etlv8l7h35"]
+[gd_scene load_steps=5 format=3 uid="uid://b46etlv8l7h35"]
 
 [ext_resource type="Script" path="res://scripts/main_area.gd" id="1_bq7y8"]
+[ext_resource type="PackedScene" uid="uid://b7ucnse5ic0ab" path="res://scenes/tree.tscn" id="2_8g814"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aujj3"]
-size = Vector2(809.375, 41)
+size = Vector2(150, 9)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg074"]
+bg_color = Color(0.521569, 0.65098, 0.388235, 1)
 
 [node name="MainArea" type="Node2D"]
 script = ExtResource("1_bq7y8")
@@ -11,9 +15,13 @@ script = ExtResource("1_bq7y8")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(404.313, 20.5)
+position = Vector2(75, 4.5)
 shape = SubResource("RectangleShape2D_aujj3")
 
 [node name="Panel" type="Panel" parent="StaticBody2D"]
-offset_right = 810.0
-offset_bottom = 40.0
+offset_right = 150.0
+offset_bottom = 9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tg074")
+
+[node name="Tree" parent="." instance=ExtResource("2_8g814")]
+position = Vector2(32, 0)

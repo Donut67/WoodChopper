@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvay18wi7usnh"]
+
+[ext_resource type="Script" path="res://scripts/log.gd" id="1_iv853"]
+
+[node name="log" type="Node2D" groups=["log"]]
+script = ExtResource("1_iv853")
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="."]

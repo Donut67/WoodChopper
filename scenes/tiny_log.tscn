@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkauusbq5ny57"]
+
+[ext_resource type="Texture2D" uid="uid://my624p76saae" path="res://assets/Environment/Trees/Log1.png" id="1_7ndwa"]
+[ext_resource type="Script" path="res://scripts/tiny_log.gd" id="1_kehur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfqr"]
+size = Vector2(16, 3)
+
+[node name="tiny_log" type="Area2D" groups=["pickable"]]
+script = ExtResource("1_kehur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -1.5)
+shape = SubResource("RectangleShape2D_qgfqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("1_7ndwa")
+hframes = 4

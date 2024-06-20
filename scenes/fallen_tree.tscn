@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dokkdytub41uq"]
+
+[ext_resource type="Script" path="res://scripts/fallen_tree.gd" id="1_dfls2"]
+[ext_resource type="Texture2D" uid="uid://bfmjudv2gvexk" path="res://assets/Environment/Trees/FallTree1.png" id="1_p4qaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsdqq"]
+size = Vector2(70, 3)
+
+[sub_resource type="Animation" id="Animation_aegd7"]
+resource_name = "shake"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(57, -24), Vector2(56, -24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26thw"]
+_data = {
+"shake": SubResource("Animation_aegd7")
+}
+
+[node name="fallen_tree" type="Area2D" groups=["can_be_hit"]]
+script = ExtResource("1_dfls2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, -1.5)
+shape = SubResource("RectangleShape2D_hsdqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(56, -24)
+texture = ExtResource("1_p4qaf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_26thw")
+}
+
+[node name="Logs" type="Node2D" parent="."]

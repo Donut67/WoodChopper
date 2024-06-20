@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdwfmd1luu5vd"]
+
+[ext_resource type="Script" path="res://scripts/work_bench.gd" id="1_rxqmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhvam"]
+size = Vector2(6, 1)
+
+[node name="work_bench" type="Area2D" groups=["station"]]
+script = ExtResource("1_rxqmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lhvam")
+
+[node name="Object" type="Node2D" parent="."]
